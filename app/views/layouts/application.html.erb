@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swicket</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav>
+		<ul class="nav nav-tabs">
+		  <li><a href="/">Home</a></li>
+		  <li><a href="/venues/">List</a></li>
+		  <li><a href="/venues/new">New</a></li>
+		</ul>
+	</nav>
+
+<%= yield %>
+
+</body>
+</html>

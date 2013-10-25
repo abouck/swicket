@@ -1,0 +1,18 @@
+<h1>Venu List</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Category</th>
+		<th>Size</th>
+		<th>Remove</th>
+	</tr>
+
+<% @venues.each do |venue| %>
+	<tr>
+		<td><%= venue.name %></td>
+		<td><%= venue.cat %></td>
+		<td><%= venue.size %></td>
+		<td><%= button_to "X", { action: "destroy", id: venue.id}, {method: :delete, data:{confirm:"Are you sure?"}, :class => "mybutton"} %></td>
+	</tr>
+<% end %>

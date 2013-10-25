@@ -1,0 +1,41 @@
+@import 'bootstrap';
+
+
+$maincolor: #66E4D3;
+
+body {
+	background-color: $maincolor;
+	font-family: helvetica;
+}
+
+#container {
+	background-color: #F06BBC;
+	width: 800px;
+	margin: 0 auto;
+}
+
+h1 {
+	color: #FFE272;
+}
+
+table {
+	color: #FFEFB2;
+}
+
+th {
+	color: #FFEFB2;
+}
+
+.mybutton {
+
+	border: 0px;
+	background-color: green;
+	margin: 0 auto;
+}
+
+.row div {
+	border: 1px solid #FFEFB2;
+}
+
+
+

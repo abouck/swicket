@@ -13,4 +13,4 @@ Swicket::Application.routes.draw do
   post 'authentications' => 'authentications#create'
   delete 'authentications' => 'authentications#destroy'
 
-  end
+end

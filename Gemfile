@@ -41,6 +41,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'thin'
 end
 
 # Use ActiveModel has_secure_password
@@ -54,3 +55,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+ruby "2.0.0"

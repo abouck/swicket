@@ -2,6 +2,15 @@
 
 
 $maincolor: #66E4D3;
+$bordercolor: white;
+$fontcolor: #9f8e48;
+$cardborder: 1px solid $bordercolor;
+$cardmargin: 7px;
+$cardwidth: 280px;
+$cardheight: 210px;
+$fourcol: 1190px;
+$threecol: 896px;
+$twocol: 602px;
 
 body {
 	background-color: $maincolor;
@@ -10,8 +19,29 @@ body {
 
 #container {
 	background-color: #F06BBC;
-	width: 800px;
+	width: 1190px;
+	height: 2000px;
 	margin: 0 auto;
+	float: none;
+	padding: $cardmargin;
+}
+
+@media (max-width: $fourcol) { 
+	#container {
+		width: $threecol;
+	}
+}
+
+@media (max-width: $threecol) { 
+	#container {
+		width: $twocol;
+	}
+}
+	
+@media (max-width: $twocol) { 
+	#container{	
+		width: $twocol;
+	}
 }
 
 h1 {
@@ -37,5 +67,26 @@ th {
 	border: 1px solid #FFEFB2;
 }
 
+#container .card {
+	width: $cardwidth;
+	height: $cardheight;
+	border: $cardborder;
+	float: left;
+	margin: $cardmargin;
+	box-shadow: 0px 0px 10px black;
+	background-color: white;
+	color: $fontcolor;
+}
 
+.eventscontainer {
+	margin: 0 auto;
+}
 
+.back-img {
+
+	position: relative;
+}
+
+.cardcontent {
+	position: relative;
+}

@@ -1,6 +1,6 @@
 Swicket::Application.routes.draw do
 
-  root to: 'venues#home'
+  root to: 'venues#search'
 
   resources :users
   resources :venues do
@@ -12,5 +12,7 @@ Swicket::Application.routes.draw do
   get 'signin' => 'authentications#new'
   post 'authentications' => 'authentications#create'
   delete 'authentications' => 'authentications#destroy'
+  get 'search' => 'venues#search'
+  post 'venues/getsearch' => 'venues#getsearch' 
 
 end

@@ -1,4 +1,8 @@
+require 'httparty'
+require 'json'
+
 class VenuesController < ApplicationController
+
 	def index
 		@venues = Venue.all
 	end
@@ -21,5 +25,12 @@ class VenuesController < ApplicationController
 		redirect_to venues_url
 
 	end
+
+	def getsearch
+		
+    @response = HTTParty.get('http://api.seatgeek.com/2/events?lat='+params[:lat]+'&lon='+params[:lon]+'&range='+params[:range]+'km')
+
+    render :index
+  end
 
 end

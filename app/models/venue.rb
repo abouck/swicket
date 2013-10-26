@@ -2,6 +2,8 @@ class Venue
 	include Mongoid::Document
   include HTTParty
 
+  attr_accessor :response
+
 	field :name, type: String
 	field :cat, type: String
 	field :size, type: Integer
@@ -9,9 +11,5 @@ class Venue
   field :lon, type: String
   field :range, type: String
   field :date, type: String
-
-  def getevents
-  end
-
 
 end

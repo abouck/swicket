@@ -1,51 +1,69 @@
 @import 'bootstrap';
 
 
-$maincolor: #66E4D3;
+$maincolor: rgb(102,228,211);
+$secondcolor: rgb(240,107,188);
 $bordercolor: white;
-$fontcolor: #9f8e48;
-$cardborder: 1px solid $bordercolor;
-$cardmargin: 7px;
+$fontcolor: white;
+$cardborder: 0px solid $bordercolor;
+$cardmargin: 10px;
+$cardpad: 5px;
 $cardwidth: 280px;
-$cardheight: 210px;
-$fourcol: 1190px;
-$threecol: 896px;
-$twocol: 602px;
+$cardheight: 280px;
+$fourcol: $cardwidth * 4 + $cardmargin * 10;
+$threecol: $cardwidth * 3 + $cardmargin * 8;
+$twocol: $cardwidth * 2 + $cardmargin * 6;
+$fourcolrows: $cardheight * 6 + $cardmargin * 14;
+$threecolrows: $cardheight * 8 + $cardmargin * 18;
+$twocolrows: $cardheight * 12 + $cardmargin * 26;
+
+#container a {
+  text-decoration: none;
+  color: $fontcolor;
+}
+
+nav {
+	background: $maincolor;
+	border-bottom: 2px solid $secondcolor;
+}
 
 body {
-	background-color: $maincolor;
+	background-image: url('http://joltradio.org/new//wp-content/uploads/2013/06/music_rock_show-hd.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	background-size: cover;
 	font-family: helvetica;
+  padding-top: 70px;
 }
 
 #container {
-	background-color: #F06BBC;
-	width: 1190px;
-	height: 2000px;
+	background-color: rgba(240,107,188, 0.0);
+	width: $fourcol;
+	height: $fourcolrows;
 	margin: 0 auto;
 	float: none;
 	padding: $cardmargin;
+	font-size: 13pt;
 }
 
 @media (max-width: $fourcol) { 
 	#container {
 		width: $threecol;
+		height: $threecolrows;
 	}
 }
 
 @media (max-width: $threecol) { 
 	#container {
 		width: $twocol;
-	}
-}
-	
-@media (max-width: $twocol) { 
-	#container{	
-		width: $twocol;
+		height: $twocolrows
 	}
 }
 
 h1 {
-	color: #FFE272;
+	color: $fontcolor;
+  margin: 0 auto;
 }
 
 table {
@@ -67,26 +85,65 @@ th {
 	border: 1px solid #FFEFB2;
 }
 
-#container .card {
+.card {
 	width: $cardwidth;
 	height: $cardheight;
 	border: $cardborder;
 	float: left;
 	margin: $cardmargin;
-	box-shadow: 0px 0px 10px black;
-	background-color: white;
+	box-shadow: 0px 0px 3px black;
 	color: $fontcolor;
 }
 
-.eventscontainer {
-	margin: 0 auto;
+
+
+.overlay {
+	width: $cardwidth;
+	height: $cardheight;
+	position: relative;
+	background-color: rgba(0,0,0,0.3);
+	overflow: hidden;
+  
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-.back-img {
+.overlay:hover {
+	background-color: rgba(255,255,255,0.5);
+	color: black;
+	box-shadow: 0px 0px 3px white;
+	.cardinfo{
+		background: rgba(102,228,211,0.3);
+	}
 
-	position: relative;
 }
 
 .cardcontent {
 	position: relative;
+}
+
+.cardtitle {
+	position: relative;
+	bottom: -80px;
+	font-size: 14pt;
+	height: 3em;
+	padding: $cardpad;
+	overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.cardinfo {
+	width: $cardwidth;
+	height: $cardheight - 210;
+	background: rgba(102,228,211,0.3);
+	position: relative;
+	padding: $cardpad;
+	top: 210px; 
+	overflow: hidden;
+  text-overflow: ellipsis;
 }

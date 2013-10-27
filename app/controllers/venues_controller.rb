@@ -28,7 +28,7 @@ class VenuesController < ApplicationController
 
 	def getsearch
 		
-    @response = HTTParty.get('http://api.seatgeek.com/2/events?lat='+params[:lat]+'&lon='+params[:lon]+'&range='+params[:range]+'km')
+    @response = HTTParty.get('http://api.seatgeek.com/2/events?lat='+params[:lat]+'&lon='+params[:lon]+'&range='+params[:range]+'km&per_page=24&taxonomies.name=sports')
 
     render :index
   end

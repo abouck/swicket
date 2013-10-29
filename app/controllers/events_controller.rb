@@ -7,16 +7,16 @@ class EventsController < ApplicationController
 		@events = Event.all
 	end
 
+	def show
+		@event = Event.find(params[:id])
+	end
+
 	def index
 		@events = Event.all
 	end
 
 	def new
 		@event = Event.new
-	end
-
-	def show
-		@event = Event.find(params[:id])
 	end
 
 	def create
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
 		
     @response = HTTParty.get('http://api.seatgeek.com/2/events?lat='+params[:lat]+'&lon='+params[:lon]+'&range='+params[:range]+'km&per_page=24&taxonomies.name=sports')
 
-    render :index
+    render :results
   end
 
 end

@@ -1,0 +1,15 @@
+<h1>Search Results</h1>
+
+
+<div id="container">
+<% @response["events"].each do |event| %>
+	<a href="<%=event["url"]%>">
+	<div class="card" style="background: rgba(240,107,188,0.3) url(<%= event["performers"][0]["image"] %>); background-repeat: no-repeat">
+		<div class="overlay">
+			 <div class="cardinfo"><%= event["venue"]["name"] %> <%= Time.parse(event["datetime_local"]).strftime("%m/%d/%Y - %l:%M %p") %></div>
+			<div class="cardtitle"><%= event["title"] %></div>
+	  </div>
+	  </a>
+	</div>
+<% end %>
+</div>

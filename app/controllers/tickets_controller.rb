@@ -1,15 +1,16 @@
 class TicketsController < ApplicationController
+  
+  def show
+    @ticket = Ticket.find(params[:id])
+    @event = Event.find(params[:event_id])
+  end
+
   def index
     @tickets = Ticket.all
   end
 
   def new
     @ticket = Ticket.new
-    @event = Event.find(params[:event_id])
-  end
-
-  def show
-    @ticket = Ticket.find(params[:id])
     @event = Event.find(params[:event_id])
   end
 

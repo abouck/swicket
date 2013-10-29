@@ -1,5 +1,5 @@
 <% @events.each do |event| %>
-<div><%= event.name %></div>
+<div><%= event.name %></div> <%= button_to "View Event", event_url(event.id), method: :get %>
 <% if event.tickets.length > 0 %>
   <%= event.tickets.each do |ticket| %> 
 <p>

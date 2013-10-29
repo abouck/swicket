@@ -1,0 +1,10 @@
+<% @events.each do |event| %>
+<div><%= event.name %></div>
+<% if event.tickets.length > 0 %>
+  <%= event.tickets.each do |ticket| %> 
+<p>
+  <%= ticket.section %> <%= ticket.row %> <%= ticket.seat %>
+</p>
+<% end %>
+<% end %>
+<% end %>

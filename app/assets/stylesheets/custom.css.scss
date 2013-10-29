@@ -22,9 +22,10 @@ $twocolrows: $cardheight * 12 + $cardmargin * 26;
   color: $fontcolor;
 }
 
-nav {
+#navigation {
 	background: $maincolor;
 	border-bottom: 2px solid $secondcolor;
+	min-height: 40px
 }
 
 body {
@@ -82,7 +83,7 @@ th {
 }
 
 .row div {
-	border: 1px solid #FFEFB2;
+
 }
 
 .card {

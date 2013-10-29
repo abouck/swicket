@@ -1,0 +1,10 @@
+<header>I'm a show</header>
+
+<%= @event.name %>
+<%= @event.cat %>
+<%= @event.size %>
+
+
+<p>
+<%= button_to "Add Ticket", new_event_ticket_url(@event), method: :get %>
+</p>

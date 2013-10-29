@@ -1,0 +1,7 @@
+<header>I'm a ticket!</header>
+
+<%= @ticket.section %>
+<%= @ticket.row %>
+<%= @ticket.seat %>
+
+<%= button_to "Add Another Ticket", new_event_ticket_url(@event), method: :get %>

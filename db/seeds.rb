@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Venue.destroy_all
+Event.destroy_all
 
-Venue.create([{name: "Hollywood Bowl", cat: "Amphitheatre", size: 1000},
+Event.create([{name: "Hollywood Bowl", cat: "Amphitheatre", size: 1000},
 	{name: "Staples Center", cat: "Arena", size: 8000},
 	{name: "Getty", cat: "Unique", size: 500},
 	{name: "Ogden Theater", cat: "Open Theater", size: 300},

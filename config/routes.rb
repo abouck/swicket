@@ -1,18 +1,18 @@
 Swicket::Application.routes.draw do
 
-  root to: 'venues#search'
+  root to: 'events#search'
 
   resources :users
-  resources :venues do
-    resources :events do
-      resources :tickets
-    end
+  resources :events do
+    resources :tickets
   end
+
 
   get 'signin' => 'authentications#new'
   post 'authentications' => 'authentications#create'
   delete 'authentications' => 'authentications#destroy'
-  get 'search' => 'venues#search'
-  post 'venues/getsearch' => 'venues#getsearch' 
+  get 'search' => 'events#search'
+  post 'events/getsearch' => 'events#getsearch'
+  get 'active' => 'events#active' 
 
 end

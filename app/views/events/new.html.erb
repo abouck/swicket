@@ -1,0 +1,21 @@
+<%= form_for @event do |event|%>
+<p>
+	<%= event.label :name, "Name"%>
+	<%=  event.text_field :name%>
+</p>
+
+<p>
+	<%= event.label :cat, "Category"%>
+	<%= event.text_field :cat%> 
+</p>
+
+<p>
+	<%= event.label :size, "Size"%>
+	<%= event.text_field :size%>
+</p>
+
+<p>
+	<%= event.submit %>
+</p>
+
+<%end%>

@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params[:user].permit(:email, :password, :password_confirmation, :username))
-    redirect_to action: "new"
+    redirect_to root_url
   end
 end

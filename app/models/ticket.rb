@@ -7,5 +7,7 @@ class Ticket
   field :seat, type: String
   
   belongs_to :event
+  belongs_to :poster, class_name:"User", inverse_of: :posts
+  belongs_to :claimant, class_name:"User", inverse_of: :claims
 
 end

@@ -1,15 +1,46 @@
-<h1>This is the search</h1>
 
+<div id="logo">
+  <div id="ticket">
+    <div class="stripe"></div>
+    <div class="stripe2"></div>
+    <div class="stripe"></div>
+    <div class="stripe2"></div>
+    <div class="stripe"></div>
+  </div>
+  <div id="stub">
+    <div class="stripe"></div>
+    <div class="stripe2"></div>
+    <div class="stripe"></div>
+    <div class="stripe2"></div>
+    <div class="stripe"></div>
+  </div>
+</div>
+
+<div id="searchbox">
 <%= form_tag "/events/getsearch" do %>
-  <%= label_tag :lat, "Latitude:" %>
-  <%= text_field_tag :lat%>
-
-  <%= label_tag :lon, "Longitude:" %>
-  <%= text_field_tag  :lon%>
-  <%= label_tag :range, "Range:" %>
-  <%= text_field_tag :range%>
-  <%= submit_tag%>
+  <p>
+    <%= label_tag :lat, "Latitude:" %>
+  </p>
+  <p>
+    <%= text_field_tag :lat%>
+  </p>
+  <p>
+    <%= label_tag :lon, "Longitude:" %>
+  </p>
+  <p>
+    <%= text_field_tag  :lon%>
+  </p>
+  <p>  
+    <%= label_tag :range, "Range:" %>
+  </p>
+  <p>
+    <%= text_field_tag :range%>
+  </p>
+  <p>
+    <%= submit_tag%>
+  </p>
 <% end %>
+</div>
 
 
 

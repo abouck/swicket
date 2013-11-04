@@ -22,22 +22,22 @@
     <%= label_tag :lat, "Latitude:" %>
   </p>
   <p>
-    <%= text_field_tag :lat%>
+    <%= text_field_tag :lat, nil, class: "form-control"%>
   </p>
   <p>
     <%= label_tag :lon, "Longitude:" %>
   </p>
   <p>
-    <%= text_field_tag  :lon%>
+    <%= text_field_tag :lon, nil, class: "form-control"%>
   </p>
   <p>  
     <%= label_tag :range, "Range:" %>
   </p>
   <p>
-    <%= text_field_tag :range%>
+    <%= text_field_tag :range, nil, class: "form-control"%>
   </p>
   <p>
-    <%= submit_tag%>
+    <%= submit_tag "Search", class: "btn btn-default" %>
   </p>
 <% end %>
 </div>

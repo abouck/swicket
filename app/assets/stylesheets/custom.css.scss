@@ -97,7 +97,7 @@ body {
 #container {
 	background-color: rgba(240,107,188, 0.0);
 	width: $fourcol;
-	height: $fourcolrows;
+	min-height: 290px;
 	margin: 0 auto;
 	float: none;
 	padding: $cardmargin;
@@ -107,14 +107,14 @@ body {
 @media (max-width: $fourcol) { 
 	#container {
 		width: $threecol;
-		height: $threecolrows;
+		// height: $threecolrows;
 	}
 }
 
 @media (max-width: $threecol) { 
 	#container {
 		width: $twocol;
-		height: $twocolrows
+		// height: $twocolrows
 	}
 }
 

@@ -1,26 +1,21 @@
-<header>I'm a show</header>
-<div>
-<%= @event.name %>
-<%= @event.cat %>
-<%= @event.size %>
-</div>
 
-<h1>Tickets Available</h1>
+<div class="displaystuff">
+<h1><%= @event.name %></h1>
 
+<h2>Tickets Available</h2>
 <table>
   <tr>
     <th>Section</th>
     <th>Row</th>
-    <th>seat</th>
+    <th>Seat</th>
   </tr>
 
-  <%= @event.tickets.each do |ticket| %>
+  <% @event.tickets.each do |ticket| %>
   <tr>
     <td><%= ticket.section %></td>
     <td><%= ticket.row %></td>
     <td><%= ticket.seat %></td>
-    <td><%= ticket.poster.email %></td>
-    <td><%= button_to "Claim", event_ticket_url(@event, ticket.id), controller: :tickets, action: :show, method: :get %></td>
+    <td><%= button_to "Claim", event_ticket_url(@event, ticket.id), controller: :tickets, action: :show, method: :get, class: "btn btn-default" %></td>
   </tr>
 
   <% end %>
@@ -31,5 +26,6 @@
 </table>
 
 <p>
-<%= button_to "Add Ticket", new_event_ticket_url(@event), method: :get %>
+<%= button_to "Add Ticket", new_event_ticket_url(@event), method: :get, class: "btn btn-default" %>
 </p>
+</div>

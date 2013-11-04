@@ -1,21 +1,26 @@
-<%= form_for @event do |event|%>
-<p>
-	<%= event.label :name, "Name"%>
-	<%=  event.text_field :name%>
-</p>
 
-<p>
-	<%= event.label :cat, "Category"%>
-	<%= event.text_field :cat%> 
-</p>
-
-<p>
-	<%= event.label :size, "Size"%>
-	<%= event.text_field :size%>
-</p>
-
-<p>
-	<%= event.submit %>
-</p>
-
-<%end%>
+<div id="searchbox">
+<%= form_for @event do |event| %>
+  <p>
+    <%= event.label :name, "Event Name" %>
+  </p>
+  <p>
+    <%= event.text_field :name, class: "form-control"%>
+  </p>
+  <p>
+    <%= event.label :cat, "Category" %>
+  </p>
+  <p>
+    <%= event.text_field :cat, class: "form-control"%>
+  </p>
+  <p>  
+    <%= event.label :size, "Size" %>
+  </p>
+  <p>
+    <%= event.text_field :size, class: "form-control"%>
+  </p>
+  <p>
+    <%= event.submit "Create", class: "btn btn-default" %>
+  </p>
+<% end %>
+</div>

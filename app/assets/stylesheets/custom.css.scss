@@ -68,13 +68,15 @@ $twocolrows: $cardheight * 12 + $cardmargin * 26;
 
 #searchbox {
 	width: 20em;
-	height: 20em;
+	min-height: 20em;
 	margin: 0 auto;
+	padding: 10px;
 	top: 5em;
 	position: relative;
 	text-align: center;
 	background: $maincolor;
 	opacity: 0.9;
+	border-radius: 5px;
 }
 
 #navigation {
@@ -92,6 +94,7 @@ body {
 	background-size: cover;
 	font-family: helvetica;
   padding-top: 70px;
+
 }
 
 #container {
@@ -118,17 +121,21 @@ body {
 	}
 }
 
-h1 {
+h1, h2 {
 	color: $fontcolor;
   margin: 0 auto;
 }
 
-table {
-	color: #FFEFB2;
+table, th, td {
+	color: white;
+	text-align: center;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	margin: 0 auto;
 }
 
 th {
-	color: #FFEFB2;
+	color: white;
 }
 
 .mybutton {
@@ -191,6 +198,9 @@ th {
 	padding: $cardpad;
 	overflow: hidden;
   text-overflow: ellipsis;
+  a {
+		text-decoration: none;
+	}
 
 }
 
@@ -203,4 +213,31 @@ th {
 	top: 210px; 
 	overflow: hidden;
   text-overflow: ellipsis;
+  a {
+		text-decoration: none;
+	}
+}
+
+.displaystuff {
+	width: $cardwidth;
+	min-width: $cardwidth;
+	min-height: 1px;
+	margin: 0 auto;
+	padding: 5px;
+	background-color: $maincolor;
+	border-radius: 5px;
+	opacity: 0.9;
+	text-align: center;
+
+}
+.displaytickets {
+	width: 30em;
+	min-height: 1px;
+	margin: 0 auto;
+	padding: 5px;
+	background-color: $maincolor;
+	border-radius: 5px;
+	opacity: 0.9;
+	text-align: center;
+
 }

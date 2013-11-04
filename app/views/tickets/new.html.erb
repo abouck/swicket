@@ -1,21 +1,25 @@
+<div id="searchbox">
 <%= form_for [@event, @ticket] do |ticket|%>
 <p>
-  <%= ticket.label :section, "Section"%>
-  <%=  ticket.text_field :section %>
-</p>
-
-<p>
-  <%= ticket.label :row, "Row"%>
-  <%= ticket.text_field :row%> 
-</p>
-
-<p>
-  <%= ticket.label :seat, "Seat"%>
-  <%= ticket.text_field :seat%>
-</p>
-
-<p>
-  <%= ticket.submit %>
-</p>
-
+    <%= ticket.label :section, "Section" %>
+  </p>
+  <p>
+    <%= ticket.text_field :section, class: "form-control"%>
+  </p>
+  <p>
+    <%= ticket.label :row, "Row" %>
+  </p>
+  <p>
+    <%= ticket.text_field :row, class: "form-control"%>
+  </p>
+  <p>  
+    <%= ticket.label :seat, "Seat" %>
+  </p>
+  <p>
+    <%= ticket.text_field :seat, class: "form-control"%>
+  </p>
+  <p>
+    <%= ticket.submit "Create", class: "btn btn-default" %>
+  </p>
 <%end%>
+</div>

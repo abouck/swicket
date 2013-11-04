@@ -1,10 +1,14 @@
+
+<div id="container">
 <% @events.each do |event| %>
-<div><%= event.name %></div> <%= button_to "View Event", event_url(event.id), method: :get %>
-<% if event.tickets.length > 0 %>
-  <%= event.tickets.each do |ticket| %> 
-<p>
-  <%= ticket.section %> <%= ticket.row %> <%= ticket.seat %>
-</p>
+  <%= link_to(event_url(event.id)) do %>
+  <div class="card" style="background: rgba(240,107,188,0.3)">
+    <div class="overlay">
+       <div class="cardinfo"><%= event.tickets.count %> Available Tickets</div>
+      <div class="cardtitle"><%= event.name %></div>
+    </div>
+    </a>
+  </div>
 <% end %>
 <% end %>
-<% end %>
+</div>

@@ -1,0 +1,19 @@
+<h1>My Tickets</h1>
+<table>
+  <th>Event</th>
+  <th>Section</th>
+  <th>Row</th>
+  <th>Seat</th>
+
+  <%= @user.posts.each do |ticket| %>
+  <tr>
+    <td><%= ticket.event.name %></td>
+    <td><%= ticket.section %></td>
+    <td><%= ticket.row %></td>
+    <td><%= ticket.seat %></td>
+    <td><%= button_to "Delete", event_ticket_url(ticket.event.id, ticket.id), controller: :tickets, action: :destroy, method: :delete %></td>
+    <td><%= button_to "Edit", edit_event_ticket_url(ticket.event.id, ticket.id), controller: :tickets, action: :edit, method: :get %></td>
+  </tr>
+  <% end %>
+
+</table>

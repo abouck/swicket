@@ -73,12 +73,15 @@ $twocolrows: $cardheight * 12 + $cardmargin * 26;
 	top: 5em;
 	position: relative;
 	text-align: center;
+	background: $maincolor;
+	opacity: 0.9;
 }
 
 #navigation {
 	background: $maincolor;
-	border-bottom: 2px solid $secondcolor;
-	min-height: 40px
+	box-shadow: 0px 0px 3px black;
+	min-height: 40px;
+	opacity: 0.9;
 }
 
 body {

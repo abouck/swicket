@@ -20,12 +20,12 @@ class TicketsController < ApplicationController
     @ticket.event = Event.find(params[:event_id])
     @ticket.poster = current_user
     @ticket.save
-    redirect_to :action => "show", :id => @ticket._id
+    redirect_to event_url(params[:event_id])
   end
 
   def destroy
     Ticket.find(params[:id]).destroy
-    redirect_to event_url(params[:event_id])
+    redirect_to user_url(current_user.id)
   end
 
   def edit
@@ -38,7 +38,7 @@ class TicketsController < ApplicationController
   @event = Event.find(params[:event_id])
 
   if @ticket.update_attributes(params[:ticket].permit(:section, :row, :seat))
-  redirect_to event_url(params[:event_id])
+  redirect_to user_url(current_user.id)
   else
   render 'edit'
   end

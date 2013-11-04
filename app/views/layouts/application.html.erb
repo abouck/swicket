@@ -8,26 +8,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" id="navigation" role="navigation">
-		<ul class="nav nav-tabs">
-		  <li><a href="/">Home</a></li>
-      <% if current_user %>
-  		  <li><a href="/events/new">New</a></li>
-        <li><a href="/active">Active Events</a></li>
-      <% else %>
-        <li><a href="/users/new">Sign Up</a></li>
-      <% end %>
-		</ul>
-    <% if current_user %>
-    <%= button_to "Logout", authentications_url, method: :delete %>
-  <% else %>
-    <%= form_for User.new, {url: "/authentications", method: "post"} do |user| %>
-    <%= user.label :email, "Email:" %>
-    <%= user.text_field :email, placeholder: "Email" %>
-    <%= user.label :password, "Password:" %>
-    <%= user.password_field :password, placeholder: "Password" %>
-    <%= user.submit "Sign In" %>
-  <% end %>
-  <% end %>
+      <%= render 'layouts/nav' %>
 	</nav>
 
 <%= yield %>

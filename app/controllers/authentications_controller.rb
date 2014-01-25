@@ -13,15 +13,20 @@ class AuthenticationsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:user][:email])
-    if user
-      # Authenticate User
-      if user.authenticate(params[:user][:password])
-        session[:user_id] = user.id
-        redirect_to root_url
-      else
-        flash.now.alert = "Unable to sign you in."
-        render :new
+    print user.inspect
+    if user != nil
+      if user
+        # Authenticate User
+        if user.authenticate(params[:user][:password])
+          session[:user_id] = user.id
+          redirect_to root_url
+        else
+          flash.now.alert = "Unable to sign you in."
+          redirect_to root_url
+        end
       end
+    else
+      redirect_to root_url
     end
   end
 

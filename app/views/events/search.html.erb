@@ -1,46 +1,64 @@
 
 <div id="logo">
   <div id="ticket">
-    <div class="stripe"></div>
-    <div class="stripe2"></div>
-    <div class="stripe"></div>
-    <div class="stripe2"></div>
-    <div class="stripe"></div>
+    <div class="stripe">Switch And Search Tickets with Swicket!</div>
+    <div class="stripe2">Search events near you</div>
+    <div class="stripe">Sign up and log in to check in to a live event</div>
+    <div class="stripe2">Post and claim tickets</div>
+    <div class="stripe">Trade seats and enjoy the show</div>
   </div>
   <div id="stub">
     <div class="stripe"></div>
-    <div class="stripe2"></div>
-    <div class="stripe"></div>
-    <div class="stripe2"></div>
-    <div class="stripe"></div>
+    <div class="stripe2">Section 3</div>
+    <div class="stripe">Row 1</div>
+    <div class="stripe2">Seat Number 14</div>
+    <div class="stripe"></div>   
   </div>
 </div>
 
 <div id="searchbox">
 <%= form_tag "/events/getsearch" do %>
+
   <p>
-    <%= label_tag :lat, "Latitude:" %>
+    <%= hidden_field_tag :lat, nil, class: "form-control"%>
+  </p>
+
+  <p>
+    <%= hidden_field_tag :lon, nil, class: "form-control"%>
+  </p>
+
+  <p>
+    <%= hidden_field_tag :range, nil, class: "form-control"%>
   </p>
   <p>
-    <%= text_field_tag :lat, nil, class: "form-control"%>
-  </p>
-  <p>
-    <%= label_tag :lon, "Longitude:" %>
-  </p>
-  <p>
-    <%= text_field_tag :lon, nil, class: "form-control"%>
-  </p>
-  <p>  
-    <%= label_tag :range, "Range:" %>
-  </p>
-  <p>
-    <%= text_field_tag :range, nil, class: "form-control"%>
-  </p>
-  <p>
-    <%= submit_tag "Search", class: "btn btn-default" %>
+    <%= submit_tag "Find Events Near Me!", class: "btn btn-default" %>
   </p>
 <% end %>
 </div>
+<script>
+function getLocation()
+  {
+  x = document.getElementById('lat')
+  y = document.getElementById('lon')
+  z = document.getElementById('range')
+  x.value = "34.02"
+  y.value = "-118.4"
+  z.value = "40"
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.value="34.02";
+    y.value="-118.4";
+    }
+  }
+function showPosition(position)
+  {
+  x.value = position.coords.latitude; 
+  y.value = position.coords.longitude; 
+  }
+  getLocation()
+</script>
 
 
 

@@ -16,5 +16,6 @@ Swicket::Application.routes.draw do
   get 'search' => 'events#search'
   post 'events/getsearch' => 'events#getsearch'
   get 'active' => 'events#active' 
+  post '/events/:event_id/tickets/:id/claim' => 'tickets#claim'
 
 end

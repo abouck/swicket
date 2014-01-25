@@ -29,6 +29,7 @@ development:
         # retry_interval: 1
   # Configure Mongoid specific options. (optional)
   options:
+    raise_not_found_error: false
     # Enable the identity map, needed for eager loading. (default: false)
     # identity_map_enabled: false
 
@@ -70,6 +71,7 @@ test:
         - localhost:27017
       options:
         read: primary
+        raise_not_found_error: false
         # In the test environment we lower the retries and retry interval to
         # low amounts for fast failures.
         max_retries: 1
@@ -82,3 +84,4 @@ production:
       options:
         skip_version_check: true
         safe: true
+        raise_not_found_error: false

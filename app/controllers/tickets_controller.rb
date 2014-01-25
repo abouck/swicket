@@ -16,7 +16,6 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(params[:ticket].permit(:section, :row, :seat))
-    #@ticket.user = current_user
     @ticket.event = Event.find(params[:event_id])
     @ticket.poster = current_user
     @ticket.save
@@ -29,18 +28,22 @@ class TicketsController < ApplicationController
   end
 
   def edit
-  @ticket = Ticket.find(params[:id])
-  @event = Event.find(params[:event_id])
+    @ticket = Ticket.find(params[:id])
+    @event = Event.find(params[:event_id])
   end
 
   def update
-  @ticket = Ticket.find(params[:id])
-  @event = Event.find(params[:event_id])
+    @ticket = Ticket.find(params[:id])
+    @event = Event.find(params[:event_id])
 
-  if @ticket.update_attributes(params[:ticket].permit(:section, :row, :seat))
-  redirect_to user_url(current_user.id)
-  else
-  render 'edit'
+    if @ticket.update_attributes(params[:ticket].permit(:section, :row, :seat))
+      redirect_to user_url(current_user.id)
+    else
+      render 'edit'
+    end
   end
-end
+
+  def claim
+    redirect_to user_url(current_user.id)
+  end
 end
